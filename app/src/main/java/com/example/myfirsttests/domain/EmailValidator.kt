@@ -1,36 +1,9 @@
 package com.example.myfirsttests.domain
 
-import android.text.Editable
-import android.text.TextWatcher
-import java.util.regex.Pattern
+private const val EMAIL_PATTERN = """[\w-.]+@([\w-]+\.)+\w{2,4}"""
 
-class EmailValidator : TextWatcher {
-    internal var isValid = false
+class EmailValidator {
+    fun isValid(email: CharSequence?) = (email != null) && EMAIL_PATTERN.toRegex().matches(email.trim())
 
-    override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) = Unit
-
-    override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) = Unit
-
-    override fun afterTextChanged(editableText: Editable?) {
-        isValid = isValidEmail(editableText)
-
-    }
-    companion object {
-        /**
-         * Паттерн для сравнения.
-         */
-        private val EMAIL_PATTERN = Pattern.compile(
-            "[a-zA-Z0-9\\+\\.\\_\\%\\-\\+]{1,256}" +
-                    "\\@" +
-                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,64}" +
-                    "(" +
-                    "\\." +
-                    "[a-zA-Z0-9][a-zA-Z0-9\\-]{0,25}" +
-                    ")+"
-        )
-        fun isValidEmail(email: CharSequence?): Boolean {
-            return email != null && EMAIL_PATTERN.matcher(email).matches()
-        }
-    }
-
+    fun getEmailCharCount(email: CharSequence?): Int? = email?.trim()?.length
 }
