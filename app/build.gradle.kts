@@ -43,26 +43,34 @@ android {
             isIncludeAndroidResources = true
         }
     }
-}
 
-dependencies {
+    sourceSets {
+        getByName("androidTest").java.srcDirs("src/sharedAndroidTestData/java")
+        getByName("test").java.srcDirs("src/sharedTestData/java")
+    }
 
-    implementation("androidx.core:core-ktx:1.9.0")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("com.google.android.material:material:1.9.0")
-    implementation("androidx.constraintlayout:constraintlayout:2.1.4")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
 
-    //Robolectric
-    testImplementation("org.robolectric:robolectric:4.10.3")
-    testImplementation ("androidx.test:core:1.5.0")
-    testImplementation ("androidx.test:runner:1.5.2")
-    testImplementation ("androidx.test.ext:junit:1.1.5")
-    testImplementation ("androidx.test.ext:truth:1.5.0")
-    testImplementation ("androidx.test.espresso:espresso-core:3.5.1")
-    testImplementation ("androidx.test.espresso:espresso-intents:3.5.1")
 
-    androidTestImplementation ("androidx.test.uiautomator:uiautomator:2.2.0")
+
+    dependencies {
+
+        implementation("androidx.core:core-ktx:1.9.0")
+        implementation("androidx.appcompat:appcompat:1.6.1")
+        implementation("com.google.android.material:material:1.9.0")
+        implementation("androidx.constraintlayout:constraintlayout:2.1.4")
+        testImplementation("junit:junit:4.13.2")
+        androidTestImplementation("androidx.test.ext:junit:1.1.5")
+        androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+
+        //Robolectric
+        testImplementation("org.robolectric:robolectric:4.10.3")
+        testImplementation("androidx.test:core:1.5.0")
+        testImplementation("androidx.test:runner:1.5.2")
+        testImplementation("androidx.test.ext:junit:1.1.5")
+        testImplementation("androidx.test.ext:truth:1.5.0")
+        testImplementation("androidx.test.espresso:espresso-core:3.5.1")
+        testImplementation("androidx.test.espresso:espresso-intents:3.5.1")
+
+        androidTestImplementation("androidx.test.uiautomator:uiautomator:2.2.0")
+    }
 }

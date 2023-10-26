@@ -1,5 +1,6 @@
 package com.example.myfirsttests.domain.validator
 
+import com.example.myfirsttests.CORRECT_EMAIL
 import com.example.myfirsttests.domain.EmailValidator
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertFalse
@@ -62,7 +63,7 @@ class EmailValidatorTest {
 
     @Test
     fun emailValidator_Correct_True() {
-        assertTrue(emailValidator.isValid("name@email.com"))
+        assertTrue(emailValidator.isValid(CORRECT_EMAIL))
         assertTrue(emailValidator.isValid("name@e-mail.com"))
         assertTrue(emailValidator.isValid("name@e-mail-mail-mail.com"))
         assertTrue(emailValidator.isValid("name@email.com.com"))
