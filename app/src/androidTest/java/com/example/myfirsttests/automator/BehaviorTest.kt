@@ -1,4 +1,4 @@
-package com.example.myfirsttests
+package com.example.myfirsttests.automator
 
 import android.content.Context
 import android.content.Intent
@@ -9,12 +9,14 @@ import androidx.test.platform.app.InstrumentationRegistry.getInstrumentation
 import androidx.test.uiautomator.By
 import androidx.test.uiautomator.UiDevice
 import androidx.test.uiautomator.Until
+import com.example.myfirsttests.EMPTY_MESSAGE
+import com.example.myfirsttests.TEST_INPUT
+import com.example.myfirsttests.TIMEOUT
 import org.junit.Assert
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
-const val TIMEOUT = 5000L
 
 @RunWith(AndroidJUnit4::class)
 @SdkSuppress(minSdkVersion = 18)
@@ -61,7 +63,7 @@ class BehaviorTest {
         val saveButton = uiDevice.findObject(By.res(packageName, "saveButton"))
         val inputCopy = uiDevice.findObject(By.res(packageName, "inputCopy"))
         saveButton.click()
-        Assert.assertEquals(inputCopy.text, "Empty")
+        Assert.assertEquals(inputCopy.text, EMPTY_MESSAGE)
     }
 
     @Test
@@ -69,8 +71,8 @@ class BehaviorTest {
         val saveButton = uiDevice.findObject(By.res(packageName, "saveButton"))
         val inputCopy = uiDevice.findObject(By.res(packageName, "inputCopy"))
         val inputText = uiDevice.findObject(By.res(packageName, "inputText"))
-        inputText.text = "Test text"
+        inputText.text = TEST_INPUT
         saveButton.click()
-        Assert.assertEquals(inputCopy.text, "Test text")
+        Assert.assertEquals(inputCopy.text, TEST_INPUT)
     }
 }
