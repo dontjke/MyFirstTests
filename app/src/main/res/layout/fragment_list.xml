@@ -10,7 +10,6 @@
     android:clickable="true"
     android:focusable="true"
     tools:context=".ui.ListFragment">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -21,6 +20,14 @@
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/decaMargin"
             app:layout_constraintTop_toTopOf="parent" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/addButton"
+            style="@style/Widget.Material3.Button.ElevatedButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/milliMargin"
+            android:layout_gravity="center"
+            android:text="@string/addItem"/>
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerLayout"
             android:layout_width="match_parent"
