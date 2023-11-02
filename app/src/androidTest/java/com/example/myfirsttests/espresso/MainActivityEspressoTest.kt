@@ -1,4 +1,4 @@
-package com.example.myfirsttests
+package com.example.myfirsttests.espresso
 
 import android.widget.TextView
 import androidx.lifecycle.Lifecycle
@@ -14,6 +14,11 @@ import androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
 import androidx.test.espresso.matcher.ViewMatchers.withId
 import androidx.test.espresso.matcher.ViewMatchers.withText
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.example.myfirsttests.ANOTHER_INPUT
+import com.example.myfirsttests.APP_NAME
+import com.example.myfirsttests.EMPTY_MESSAGE
+import com.example.myfirsttests.R
+import com.example.myfirsttests.TEST_INPUT
 import com.example.myfirsttests.ui.MainActivity
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout

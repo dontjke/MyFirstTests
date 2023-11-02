@@ -1,4 +1,4 @@
-package com.example.myfirsttests.ui
+package com.example.myfirsttests.espresso
 
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +10,7 @@ import androidx.test.ext.junit.rules.ActivityScenarioRule
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.LargeTest
 import com.example.myfirsttests.R
+import com.example.myfirsttests.ui.MainActivity
 import org.hamcrest.Description
 import org.hamcrest.Matcher
 import org.hamcrest.Matchers.allOf
